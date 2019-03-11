@@ -1,0 +1,2451 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        <style>
+        #map {
+            width: 1311px;
+            height: 867px;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="data/Otherdonorsinitiatives_0.js"></script>
+        <script src="data/InternationalStudyVIsits_1.js"></script>
+        <script src="data/PeertoPeer_2.js"></script>
+        <script src="data/PublicSafety_3.js"></script>
+        <script src="data/ESolutionsforAHs_4.js"></script>
+        <script src="data/SustainableMobility_5.js"></script>
+        <script src="data/SocialServices_6.js"></script>
+        <script src="data/WasteManagement_7.js"></script>
+        <script src="data/DevelopmentofLocalStrategies_8.js"></script>
+        <script src="data/IntegratedSpatialPlanning_9.js"></script>
+        <script src="data/EnergyEfficiency_10.js"></script>
+        <script src="data/Coveragebyinitiativesoverall_11.js"></script>
+        <script src="data/Oblasts_13.js"></script>
+        <script src="data/Amalgamatedhromadas_14.js"></script>
+        <script src="data/AHsbytype_15.js"></script>
+        <script src="data/Settlements_16.js"></script>
+        <script src="data/Rayons_17.js"></script>
+        <script src="data/Oblastsboundary_18.js"></script>
+        <script src="data/BoundaryofUkraine_19.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+            highlightLayer.openPopup();
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[43.22888491482205,19.328249163558073],[52.78557151078922,41.43815525357424]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_Otherdonorsinitiatives_0(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_Otherdonorsinitiatives_0_0(feature) {
+            switch(String(feature.properties[' "despro" + "usaid agrr" + "dobre" '])) {
+                case 'DOBRE':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                case 'Strategy dev':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                case 'Strategy devDOBRE':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                case 'uasaidAgrDOBRE':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                case 'usaidAgr':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                case 'usaidAGR':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                case 'usaidAGRDOBRE':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                case 'Waste':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(107,148,237,1.0)',
+            }
+                    break;
+                case 'water':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                case 'waterDOBRE':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,102,229,1.0)',
+            }
+                    break;
+                case 'waterusaidAGR':
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,103,229,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Otherdonorsinitiatives_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,46,107,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Otherdonorsinitiatives_0');
+        map.getPane('pane_Otherdonorsinitiatives_0').style.zIndex = 400;
+        map.getPane('pane_Otherdonorsinitiatives_0').style['mix-blend-mode'] = 'normal';
+        var layer_Otherdonorsinitiatives_0 = new L.geoJson(json_Otherdonorsinitiatives_0, {
+            attribution: '',
+            pane: 'pane_Otherdonorsinitiatives_0',
+            onEachFeature: pop_Otherdonorsinitiatives_0,
+            style: style_Otherdonorsinitiatives_0_0,
+        });
+        bounds_group.addLayer(layer_Otherdonorsinitiatives_0);
+        map.addLayer(layer_Otherdonorsinitiatives_0);
+        function pop_InternationalStudyVIsits_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_InternationalStudyVIsits_1_0(feature) {
+            switch(String(feature.properties[' "municipal" + "cross-bord" + "social ser" + "economic d" + "local self" '])) {
+                case 'cbc':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,235,91,1.0)',
+            }
+                    break;
+                case 'edev':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(205,25,94,1.0)',
+            }
+                    break;
+                case 'inf':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(77,37,236,1.0)',
+            }
+                    break;
+                case 'lsg':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(228,44,179,1.0)',
+            }
+                    break;
+                case 'soc':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(90,230,202,1.0)',
+            }
+                    break;
+                case 'socedev':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(94,229,108,1.0)',
+            }
+                    break;
+                case 'soclsg':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(64,214,132,1.0)',
+            }
+                    break;
+                case 'edevlsg':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(233,194,110,1.0)',
+            }
+                    break;
+                case 'infcbc':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(134,39,212,1.0)',
+            }
+                    break;
+                case 'infedev':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(115,232,73,1.0)',
+            }
+                    break;
+                case 'inflsg':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(238,119,59,1.0)',
+            }
+                    break;
+                case 'infLSG':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(210,122,125,1.0)',
+            }
+                    break;
+                case 'infsoc':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(194,240,119,1.0)',
+            }
+                    break;
+                case 'infcbcsoc':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(210,34,229,1.0)',
+            }
+                    break;
+                case 'infsocedev':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(41,124,206,1.0)',
+            }
+                    break;
+                case 'infsoclsg':
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(104,118,202,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_InternationalStudyVIsits_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(36,193,220,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_InternationalStudyVIsits_1');
+        map.getPane('pane_InternationalStudyVIsits_1').style.zIndex = 401;
+        map.getPane('pane_InternationalStudyVIsits_1').style['mix-blend-mode'] = 'normal';
+        var layer_InternationalStudyVIsits_1 = new L.geoJson(json_InternationalStudyVIsits_1, {
+            attribution: '',
+            pane: 'pane_InternationalStudyVIsits_1',
+            onEachFeature: pop_InternationalStudyVIsits_1,
+            style: style_InternationalStudyVIsits_1_0,
+        });
+        bounds_group.addLayer(layer_InternationalStudyVIsits_1);
+        map.addLayer(layer_InternationalStudyVIsits_1);
+        function pop_PeertoPeer_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_PeertoPeer_2_0(feature) {
+            switch(String(feature.properties['p2p'])) {
+                case 'P2P':
+                    return {
+                pane: 'pane_PeertoPeer_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(55,55,239,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_PeertoPeer_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(131,126,215,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_PeertoPeer_2');
+        map.getPane('pane_PeertoPeer_2').style.zIndex = 402;
+        map.getPane('pane_PeertoPeer_2').style['mix-blend-mode'] = 'normal';
+        var layer_PeertoPeer_2 = new L.geoJson(json_PeertoPeer_2, {
+            attribution: '',
+            pane: 'pane_PeertoPeer_2',
+            onEachFeature: pop_PeertoPeer_2,
+            style: style_PeertoPeer_2_0,
+        });
+        bounds_group.addLayer(layer_PeertoPeer_2);
+        map.addLayer(layer_PeertoPeer_2);
+        function pop_PublicSafety_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_PublicSafety_3_0(feature) {
+            switch(String(feature.properties['safety'])) {
+                case 'safe':
+                    return {
+                pane: 'pane_PublicSafety_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,77,1,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_PublicSafety_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(78,216,115,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_PublicSafety_3');
+        map.getPane('pane_PublicSafety_3').style.zIndex = 403;
+        map.getPane('pane_PublicSafety_3').style['mix-blend-mode'] = 'normal';
+        var layer_PublicSafety_3 = new L.geoJson(json_PublicSafety_3, {
+            attribution: '',
+            pane: 'pane_PublicSafety_3',
+            onEachFeature: pop_PublicSafety_3,
+            style: style_PublicSafety_3_0,
+        });
+        bounds_group.addLayer(layer_PublicSafety_3);
+        map.addLayer(layer_PublicSafety_3);
+        function pop_ESolutionsforAHs_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_ESolutionsforAHs_4_0(feature) {
+            switch(String(feature.properties['e-solution'])) {
+                case 'e-sol':
+                    return {
+                pane: 'pane_ESolutionsforAHs_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(68,64,169,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_ESolutionsforAHs_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(216,222,39,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_ESolutionsforAHs_4');
+        map.getPane('pane_ESolutionsforAHs_4').style.zIndex = 404;
+        map.getPane('pane_ESolutionsforAHs_4').style['mix-blend-mode'] = 'normal';
+        var layer_ESolutionsforAHs_4 = new L.geoJson(json_ESolutionsforAHs_4, {
+            attribution: '',
+            pane: 'pane_ESolutionsforAHs_4',
+            onEachFeature: pop_ESolutionsforAHs_4,
+            style: style_ESolutionsforAHs_4_0,
+        });
+        bounds_group.addLayer(layer_ESolutionsforAHs_4);
+        map.addLayer(layer_ESolutionsforAHs_4);
+        function pop_SustainableMobility_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_SustainableMobility_5_0(feature) {
+            switch(String(feature.properties['mobility'])) {
+                case 'mob':
+                    return {
+                pane: 'pane_SustainableMobility_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(1,35,255,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_SustainableMobility_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(161,239,71,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_SustainableMobility_5');
+        map.getPane('pane_SustainableMobility_5').style.zIndex = 405;
+        map.getPane('pane_SustainableMobility_5').style['mix-blend-mode'] = 'normal';
+        var layer_SustainableMobility_5 = new L.geoJson(json_SustainableMobility_5, {
+            attribution: '',
+            pane: 'pane_SustainableMobility_5',
+            onEachFeature: pop_SustainableMobility_5,
+            style: style_SustainableMobility_5_0,
+        });
+        bounds_group.addLayer(layer_SustainableMobility_5);
+        map.addLayer(layer_SustainableMobility_5);
+        function pop_SocialServices_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_SocialServices_6_0(feature) {
+            switch(String(feature.properties['social s_1'])) {
+                case 'soc':
+                    return {
+                pane: 'pane_SocialServices_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,61,106,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_SocialServices_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(18,216,58,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_SocialServices_6');
+        map.getPane('pane_SocialServices_6').style.zIndex = 406;
+        map.getPane('pane_SocialServices_6').style['mix-blend-mode'] = 'normal';
+        var layer_SocialServices_6 = new L.geoJson(json_SocialServices_6, {
+            attribution: '',
+            pane: 'pane_SocialServices_6',
+            onEachFeature: pop_SocialServices_6,
+            style: style_SocialServices_6_0,
+        });
+        bounds_group.addLayer(layer_SocialServices_6);
+        map.addLayer(layer_SocialServices_6);
+        function pop_WasteManagement_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_WasteManagement_7_0(feature) {
+            switch(String(feature.properties['Waste Mana'])) {
+                case 'waste':
+                    return {
+                pane: 'pane_WasteManagement_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(146,246,6,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_WasteManagement_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,120,233,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_WasteManagement_7');
+        map.getPane('pane_WasteManagement_7').style.zIndex = 407;
+        map.getPane('pane_WasteManagement_7').style['mix-blend-mode'] = 'normal';
+        var layer_WasteManagement_7 = new L.geoJson(json_WasteManagement_7, {
+            attribution: '',
+            pane: 'pane_WasteManagement_7',
+            onEachFeature: pop_WasteManagement_7,
+            style: style_WasteManagement_7_0,
+        });
+        bounds_group.addLayer(layer_WasteManagement_7);
+        map.addLayer(layer_WasteManagement_7);
+        function pop_DevelopmentofLocalStrategies_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_DevelopmentofLocalStrategies_8_0(feature) {
+            switch(String(feature.properties['Strategic'])) {
+                case 'Strat':
+                    return {
+                pane: 'pane_DevelopmentofLocalStrategies_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,60,212,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_DevelopmentofLocalStrategies_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(64,220,71,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_DevelopmentofLocalStrategies_8');
+        map.getPane('pane_DevelopmentofLocalStrategies_8').style.zIndex = 408;
+        map.getPane('pane_DevelopmentofLocalStrategies_8').style['mix-blend-mode'] = 'normal';
+        var layer_DevelopmentofLocalStrategies_8 = new L.geoJson(json_DevelopmentofLocalStrategies_8, {
+            attribution: '',
+            pane: 'pane_DevelopmentofLocalStrategies_8',
+            onEachFeature: pop_DevelopmentofLocalStrategies_8,
+            style: style_DevelopmentofLocalStrategies_8_0,
+        });
+        bounds_group.addLayer(layer_DevelopmentofLocalStrategies_8);
+        map.addLayer(layer_DevelopmentofLocalStrategies_8);
+        function pop_IntegratedSpatialPlanning_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_IntegratedSpatialPlanning_9_0(feature) {
+            switch(String(feature.properties['Spatial Pl'])) {
+                case 'ISP':
+                    return {
+                pane: 'pane_IntegratedSpatialPlanning_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,253,38,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_IntegratedSpatialPlanning_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(65,214,132,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_IntegratedSpatialPlanning_9');
+        map.getPane('pane_IntegratedSpatialPlanning_9').style.zIndex = 409;
+        map.getPane('pane_IntegratedSpatialPlanning_9').style['mix-blend-mode'] = 'normal';
+        var layer_IntegratedSpatialPlanning_9 = new L.geoJson(json_IntegratedSpatialPlanning_9, {
+            attribution: '',
+            pane: 'pane_IntegratedSpatialPlanning_9',
+            onEachFeature: pop_IntegratedSpatialPlanning_9,
+            style: style_IntegratedSpatialPlanning_9_0,
+        });
+        bounds_group.addLayer(layer_IntegratedSpatialPlanning_9);
+        map.addLayer(layer_IntegratedSpatialPlanning_9);
+        function pop_EnergyEfficiency_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_EnergyEfficiency_10_0(feature) {
+            switch(String(feature.properties['Energy Eff'])) {
+                case 'EE':
+                    return {
+                pane: 'pane_EnergyEfficiency_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(239,29,141,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_EnergyEfficiency_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(50,230,134,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_EnergyEfficiency_10');
+        map.getPane('pane_EnergyEfficiency_10').style.zIndex = 410;
+        map.getPane('pane_EnergyEfficiency_10').style['mix-blend-mode'] = 'normal';
+        var layer_EnergyEfficiency_10 = new L.geoJson(json_EnergyEfficiency_10, {
+            attribution: '',
+            pane: 'pane_EnergyEfficiency_10',
+            onEachFeature: pop_EnergyEfficiency_10,
+            style: style_EnergyEfficiency_10_0,
+        });
+        bounds_group.addLayer(layer_EnergyEfficiency_10);
+        map.addLayer(layer_EnergyEfficiency_10);
+        function pop_Coveragebyinitiativesoverall_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_Coveragebyinitiativesoverall_11_0(feature) {
+            switch(String(feature.properties['Overlaps o'])) {
+                case '0':
+                    return {
+                pane: 'pane_Coveragebyinitiativesoverall_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,151,218,1.0)',
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Coveragebyinitiativesoverall_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,252,70,1.0)',
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Coveragebyinitiativesoverall_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(206,253,14,1.0)',
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Coveragebyinitiativesoverall_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(107,252,3,1.0)',
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_Coveragebyinitiativesoverall_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,120,1,1.0)',
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_Coveragebyinitiativesoverall_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(202,0,50,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Coveragebyinitiativesoverall_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(192,127,237,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Coveragebyinitiativesoverall_11');
+        map.getPane('pane_Coveragebyinitiativesoverall_11').style.zIndex = 411;
+        map.getPane('pane_Coveragebyinitiativesoverall_11').style['mix-blend-mode'] = 'normal';
+        var layer_Coveragebyinitiativesoverall_11 = new L.geoJson(json_Coveragebyinitiativesoverall_11, {
+            attribution: '',
+            pane: 'pane_Coveragebyinitiativesoverall_11',
+            onEachFeature: pop_Coveragebyinitiativesoverall_11,
+            style: style_Coveragebyinitiativesoverall_11_0,
+        });
+        bounds_group.addLayer(layer_Coveragebyinitiativesoverall_11);
+        map.addLayer(layer_Coveragebyinitiativesoverall_11);
+        var layer_GoogleRoad_12 = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            opacity: 1.0,
+            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+        });
+        layer_GoogleRoad_12;
+        map.addLayer(layer_GoogleRoad_12);
+        function pop_Oblasts_13(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['qc_id'] !== null ? Autolinker.link(String(feature.properties['qc_id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1_pcode'] !== null ? Autolinker.link(String(feature.properties['adm1_pcode'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1_ref'] !== null ? Autolinker.link(String(feature.properties['adm1_ref'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_en'] !== null ? Autolinker.link(String(feature.properties['adm0_en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1type'] !== null ? Autolinker.link(String(feature.properties['adm1type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1p2016'] !== null ? Autolinker.link(String(feature.properties['adm1p2016'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_le_1'] !== null ? Autolinker.link(String(feature.properties['shape_le_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_area'] !== null ? Autolinker.link(String(feature.properties['shape_area'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['# ahs'] !== null ? Autolinker.link(String(feature.properties['# ahs'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['trainingne'] !== null ? Autolinker.link(String(feature.properties['trainingne'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ratio ah/t'] !== null ? Autolinker.link(String(feature.properties['ratio ah/t'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Oblasts_13_0(feature) {
+            switch(String(feature.properties['ADM1_REF'])) {
+                case 'Avtonomna Respublika Krym':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(61,61,61,1.0)',
+            }
+                    break;
+                case 'Cherkaska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,96,96,1.0)',
+            }
+                    break;
+                case 'Chernihivska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(71,31,203,1.0)',
+            }
+                    break;
+                case 'Chernivetska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(101,201,148,1.0)',
+            }
+                    break;
+                case 'Dnipropetrovska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,230,59,1.0)',
+            }
+                    break;
+                case 'Donetska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(187,20,205,1.0)',
+            }
+                    break;
+                case 'Ivano-Frankivska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(239,120,83,1.0)',
+            }
+                    break;
+                case 'Kharkivska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(40,78,212,1.0)',
+            }
+                    break;
+                case 'Khersonska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(188,208,36,1.0)',
+            }
+                    break;
+                case 'Khmelnytska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(240,85,189,1.0)',
+            }
+                    break;
+                case 'Kirovohradska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(70,222,207,1.0)',
+            }
+                    break;
+                case 'Kyivska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(172,225,131,1.0)',
+            }
+                    break;
+                case 'Luhanska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(239,182,68,1.0)',
+            }
+                    break;
+                case 'Lvivska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(84,227,87,1.0)',
+            }
+                    break;
+                case 'Mykolaivska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(214,129,166,1.0)',
+            }
+                    break;
+                case 'Odeska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(214,129,166,1.0)',
+            }
+                    break;
+                case 'Poltavska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(202,83,188,1.0)',
+            }
+                    break;
+                case 'Rivnenska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(170,25,237,1.0)',
+            }
+                    break;
+                case 'Sevastopol':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(100,100,100,1.0)',
+            }
+                    break;
+                case 'Sumska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(99,197,210,1.0)',
+            }
+                    break;
+                case 'Ternopilska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,16,227,1.0)',
+            }
+                    break;
+                case 'Vinnytska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(70,136,222,1.0)',
+            }
+                    break;
+                case 'Volynska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(239,125,31,1.0)',
+            }
+                    break;
+                case 'Zakarpatska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(217,45,82,1.0)',
+            }
+                    break;
+                case 'Zaporizka':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(154,234,134,1.0)',
+            }
+                    break;
+                case 'Zhytomyrska':
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(38,228,168,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Oblasts_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(18,208,62,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Oblasts_13');
+        map.getPane('pane_Oblasts_13').style.zIndex = 413;
+        map.getPane('pane_Oblasts_13').style['mix-blend-mode'] = 'normal';
+        var layer_Oblasts_13 = new L.geoJson(json_Oblasts_13, {
+            attribution: '',
+            pane: 'pane_Oblasts_13',
+            onEachFeature: pop_Oblasts_13,
+            style: style_Oblasts_13_0,
+        });
+        bounds_group.addLayer(layer_Oblasts_13);
+        map.addLayer(layer_Oblasts_13);
+        function pop_Amalgamatedhromadas_14(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['qc_id'] !== null ? Autolinker.link(String(feature.properties['qc_id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['otg'] !== null ? Autolinker.link(String(feature.properties['otg'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name_obl'] !== null ? Autolinker.link(String(feature.properties['name_obl'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name_ray'] !== null ? Autolinker.link(String(feature.properties['name_ray'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ah eng'] !== null ? Autolinker.link(String(feature.properties['ah eng'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oblast'] !== null ? Autolinker.link(String(feature.properties['oblast'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['center'] !== null ? Autolinker.link(String(feature.properties['center'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['data of cr'] !== null ? Autolinker.link(String(feature.properties['data of cr'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['rayon'] !== null ? Autolinker.link(String(feature.properties['rayon'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['coverage b'] !== null ? Autolinker.link(String(feature.properties['coverage b'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['overlaps o'] !== null ? Autolinker.link(String(feature.properties['overlaps o'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['despro'] !== null ? Autolinker.link(String(feature.properties['despro'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['usaid agrr'] !== null ? Autolinker.link(String(feature.properties['usaid agrr'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['dobre'] !== null ? Autolinker.link(String(feature.properties['dobre'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['# of sv pe'] !== null ? Autolinker.link(String(feature.properties['# of sv pe'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['municipal'] !== null ? Autolinker.link(String(feature.properties['municipal'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['cross-bord'] !== null ? Autolinker.link(String(feature.properties['cross-bord'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['social ser'] !== null ? Autolinker.link(String(feature.properties['social ser'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['economic d'] !== null ? Autolinker.link(String(feature.properties['economic d'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['local self'] !== null ? Autolinker.link(String(feature.properties['local self'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['survey on'] !== null ? Autolinker.link(String(feature.properties['survey on'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['energy eff'] !== null ? Autolinker.link(String(feature.properties['energy eff'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['spatial pl'] !== null ? Autolinker.link(String(feature.properties['spatial pl'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['strategic'] !== null ? Autolinker.link(String(feature.properties['strategic'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['waste mana'] !== null ? Autolinker.link(String(feature.properties['waste mana'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['social s_1'] !== null ? Autolinker.link(String(feature.properties['social s_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['e-solution'] !== null ? Autolinker.link(String(feature.properties['e-solution'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['mobility'] !== null ? Autolinker.link(String(feature.properties['mobility'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['rup'] !== null ? Autolinker.link(String(feature.properties['rup'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ppp'] !== null ? Autolinker.link(String(feature.properties['ppp'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['p2p'] !== null ? Autolinker.link(String(feature.properties['p2p'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['safety'] !== null ? Autolinker.link(String(feature.properties['safety'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Amalgamatedhromadas_14_0() {
+            return {
+                pane: 'pane_Amalgamatedhromadas_14',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(182,182,182,0.5098039215686274)',
+            }
+        }
+        map.createPane('pane_Amalgamatedhromadas_14');
+        map.getPane('pane_Amalgamatedhromadas_14').style.zIndex = 414;
+        map.getPane('pane_Amalgamatedhromadas_14').style['mix-blend-mode'] = 'normal';
+        var layer_Amalgamatedhromadas_14 = new L.geoJson(json_Amalgamatedhromadas_14, {
+            attribution: '',
+            pane: 'pane_Amalgamatedhromadas_14',
+            onEachFeature: pop_Amalgamatedhromadas_14,
+            style: style_Amalgamatedhromadas_14_0,
+        });
+        bounds_group.addLayer(layer_Amalgamatedhromadas_14);
+        map.addLayer(layer_Amalgamatedhromadas_14);
+        function pop_AHsbytype_15(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['qc_id'] !== null ? Autolinker.link(String(feature.properties['qc_id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['otg'] !== null ? Autolinker.link(String(feature.properties['otg'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name_obl'] !== null ? Autolinker.link(String(feature.properties['name_obl'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name_ray'] !== null ? Autolinker.link(String(feature.properties['name_ray'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ah eng'] !== null ? Autolinker.link(String(feature.properties['ah eng'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oblast'] !== null ? Autolinker.link(String(feature.properties['oblast'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['center'] !== null ? Autolinker.link(String(feature.properties['center'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['data of cr'] !== null ? Autolinker.link(String(feature.properties['data of cr'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['rayon'] !== null ? Autolinker.link(String(feature.properties['rayon'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['coverage b'] !== null ? Autolinker.link(String(feature.properties['coverage b'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['overlaps o'] !== null ? Autolinker.link(String(feature.properties['overlaps o'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['despro'] !== null ? Autolinker.link(String(feature.properties['despro'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['usaid agrr'] !== null ? Autolinker.link(String(feature.properties['usaid agrr'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['dobre'] !== null ? Autolinker.link(String(feature.properties['dobre'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['# of sv pe'] !== null ? Autolinker.link(String(feature.properties['# of sv pe'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['municipal'] !== null ? Autolinker.link(String(feature.properties['municipal'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['cross-bord'] !== null ? Autolinker.link(String(feature.properties['cross-bord'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['social ser'] !== null ? Autolinker.link(String(feature.properties['social ser'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['economic d'] !== null ? Autolinker.link(String(feature.properties['economic d'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['local self'] !== null ? Autolinker.link(String(feature.properties['local self'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['survey on'] !== null ? Autolinker.link(String(feature.properties['survey on'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['energy eff'] !== null ? Autolinker.link(String(feature.properties['energy eff'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['spatial pl'] !== null ? Autolinker.link(String(feature.properties['spatial pl'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['strategic'] !== null ? Autolinker.link(String(feature.properties['strategic'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['waste mana'] !== null ? Autolinker.link(String(feature.properties['waste mana'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['social s_1'] !== null ? Autolinker.link(String(feature.properties['social s_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['e-solution'] !== null ? Autolinker.link(String(feature.properties['e-solution'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['mobility'] !== null ? Autolinker.link(String(feature.properties['mobility'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['rup'] !== null ? Autolinker.link(String(feature.properties['rup'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ppp'] !== null ? Autolinker.link(String(feature.properties['ppp'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['p2p'] !== null ? Autolinker.link(String(feature.properties['p2p'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['safety'] !== null ? Autolinker.link(String(feature.properties['safety'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_AHsbytype_15_0(feature) {
+            switch(String(feature.properties['type'])) {
+                case 'а міська громада':
+                    return {
+                pane: 'pane_AHsbytype_15',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,143,126,1.0)',
+            }
+                    break;
+                case 'селищна громада':
+                    return {
+                pane: 'pane_AHsbytype_15',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(132,212,95,1.0)',
+            }
+                    break;
+                case 'сільська громада':
+                    return {
+                pane: 'pane_AHsbytype_15',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(236,238,102,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_AHsbytype_15',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(165,54,216,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_AHsbytype_15');
+        map.getPane('pane_AHsbytype_15').style.zIndex = 415;
+        map.getPane('pane_AHsbytype_15').style['mix-blend-mode'] = 'normal';
+        var layer_AHsbytype_15 = new L.geoJson(json_AHsbytype_15, {
+            attribution: '',
+            pane: 'pane_AHsbytype_15',
+            onEachFeature: pop_AHsbytype_15,
+            style: style_AHsbytype_15_0,
+        });
+        bounds_group.addLayer(layer_AHsbytype_15);
+        map.addLayer(layer_AHsbytype_15);
+        function pop_Settlements_16(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4_EN'] !== null ? Autolinker.link(String(feature.properties['ADM4_EN'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4_UA'] !== null ? Autolinker.link(String(feature.properties['ADM4_UA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4_RU'] !== null ? Autolinker.link(String(feature.properties['ADM4_RU'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4_PCODE'] !== null ? Autolinker.link(String(feature.properties['ADM4_PCODE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4_REF'] !== null ? Autolinker.link(String(feature.properties['ADM4_REF'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4ALT1EN'] !== null ? Autolinker.link(String(feature.properties['ADM4ALT1EN'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4ALT2EN'] !== null ? Autolinker.link(String(feature.properties['ADM4ALT2EN'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4ALT1UA'] !== null ? Autolinker.link(String(feature.properties['ADM4ALT1UA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4ALT2UA'] !== null ? Autolinker.link(String(feature.properties['ADM4ALT2UA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4ALT1RU'] !== null ? Autolinker.link(String(feature.properties['ADM4ALT1RU'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM4ALT2RU'] !== null ? Autolinker.link(String(feature.properties['ADM4ALT2RU'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM3_EN'] !== null ? Autolinker.link(String(feature.properties['ADM3_EN'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM3_UA'] !== null ? Autolinker.link(String(feature.properties['ADM3_UA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM3_RU'] !== null ? Autolinker.link(String(feature.properties['ADM3_RU'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM3_PCODE'] !== null ? Autolinker.link(String(feature.properties['ADM3_PCODE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM2_EN'] !== null ? Autolinker.link(String(feature.properties['ADM2_EN'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM2_UA'] !== null ? Autolinker.link(String(feature.properties['ADM2_UA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM2_RU'] !== null ? Autolinker.link(String(feature.properties['ADM2_RU'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM2_PCODE'] !== null ? Autolinker.link(String(feature.properties['ADM2_PCODE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1_EN'] !== null ? Autolinker.link(String(feature.properties['ADM1_EN'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1_UA'] !== null ? Autolinker.link(String(feature.properties['ADM1_UA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1_RU'] !== null ? Autolinker.link(String(feature.properties['ADM1_RU'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1_PCODE'] !== null ? Autolinker.link(String(feature.properties['ADM1_PCODE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM0_EN'] !== null ? Autolinker.link(String(feature.properties['ADM0_EN'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM0_UA'] !== null ? Autolinker.link(String(feature.properties['ADM0_UA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM0_RU'] !== null ? Autolinker.link(String(feature.properties['ADM0_RU'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM0_PCODE'] !== null ? Autolinker.link(String(feature.properties['ADM0_PCODE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date'] !== null ? Autolinker.link(String(feature.properties['date'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['validOn'] !== null ? Autolinker.link(String(feature.properties['validOn'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['validTo'] !== null ? Autolinker.link(String(feature.properties['validTo'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm4Clas'] !== null ? Autolinker.link(String(feature.properties['adm4Clas'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm4Type'] !== null ? Autolinker.link(String(feature.properties['adm4Type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm4Tit'] !== null ? Autolinker.link(String(feature.properties['adm4Tit'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm4p2016'] !== null ? Autolinker.link(String(feature.properties['adm4p2016'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2Type'] !== null ? Autolinker.link(String(feature.properties['adm2Type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1Type'] !== null ? Autolinker.link(String(feature.properties['adm1Type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm4Poli'] !== null ? Autolinker.link(String(feature.properties['adm4Poli'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm3Poli'] !== null ? Autolinker.link(String(feature.properties['adm3Poli'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Settlements_16_0() {
+            return {
+                pane: 'pane_Settlements_16',
+                opacity: 1,
+                color: 'rgba(125,124,124,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,0.09411764705882353)',
+            }
+        }
+        map.createPane('pane_Settlements_16');
+        map.getPane('pane_Settlements_16').style.zIndex = 416;
+        map.getPane('pane_Settlements_16').style['mix-blend-mode'] = 'normal';
+        var layer_Settlements_16 = new L.geoJson(json_Settlements_16, {
+            attribution: '',
+            pane: 'pane_Settlements_16',
+            onEachFeature: pop_Settlements_16,
+            style: style_Settlements_16_0,
+        });
+        bounds_group.addLayer(layer_Settlements_16);
+        map.addLayer(layer_Settlements_16);
+        function pop_Rayons_17(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['qc_id'] !== null ? Autolinker.link(String(feature.properties['qc_id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_leng'] !== null ? Autolinker.link(String(feature.properties['shape_leng'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2_en'] !== null ? Autolinker.link(String(feature.properties['adm2_en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2_ua'] !== null ? Autolinker.link(String(feature.properties['adm2_ua'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2_ru'] !== null ? Autolinker.link(String(feature.properties['adm2_ru'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2_pcode'] !== null ? Autolinker.link(String(feature.properties['adm2_pcode'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2_ref'] !== null ? Autolinker.link(String(feature.properties['adm2_ref'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2alt1en'] !== null ? Autolinker.link(String(feature.properties['adm2alt1en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2alt2en'] !== null ? Autolinker.link(String(feature.properties['adm2alt2en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2alt1ua'] !== null ? Autolinker.link(String(feature.properties['adm2alt1ua'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2alt2ua'] !== null ? Autolinker.link(String(feature.properties['adm2alt2ua'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2alt1ru'] !== null ? Autolinker.link(String(feature.properties['adm2alt1ru'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2alt2ru'] !== null ? Autolinker.link(String(feature.properties['adm2alt2ru'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1_en'] !== null ? Autolinker.link(String(feature.properties['adm1_en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1_ua'] !== null ? Autolinker.link(String(feature.properties['adm1_ua'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1_ru'] !== null ? Autolinker.link(String(feature.properties['adm1_ru'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1_pcode'] !== null ? Autolinker.link(String(feature.properties['adm1_pcode'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_en'] !== null ? Autolinker.link(String(feature.properties['adm0_en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_ua'] !== null ? Autolinker.link(String(feature.properties['adm0_ua'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_ru'] !== null ? Autolinker.link(String(feature.properties['adm0_ru'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_pcode'] !== null ? Autolinker.link(String(feature.properties['adm0_pcode'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date'] !== null ? Autolinker.link(String(feature.properties['date'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['validon'] !== null ? Autolinker.link(String(feature.properties['validon'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['validto'] !== null ? Autolinker.link(String(feature.properties['validto'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2clas'] !== null ? Autolinker.link(String(feature.properties['adm2clas'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2type'] !== null ? Autolinker.link(String(feature.properties['adm2type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2p2016'] !== null ? Autolinker.link(String(feature.properties['adm2p2016'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1type'] !== null ? Autolinker.link(String(feature.properties['adm1type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1clas'] !== null ? Autolinker.link(String(feature.properties['adm1clas'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_le_1'] !== null ? Autolinker.link(String(feature.properties['shape_le_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_area'] !== null ? Autolinker.link(String(feature.properties['shape_area'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2poli_1'] !== null ? Autolinker.link(String(feature.properties['adm2poli_1'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Rayons_17_0() {
+            return {
+                pane: 'pane_Rayons_17',
+                opacity: 1,
+                color: 'rgba(252,98,118,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,113,72,0.0)',
+            }
+        }
+        map.createPane('pane_Rayons_17');
+        map.getPane('pane_Rayons_17').style.zIndex = 417;
+        map.getPane('pane_Rayons_17').style['mix-blend-mode'] = 'normal';
+        var layer_Rayons_17 = new L.geoJson(json_Rayons_17, {
+            attribution: '',
+            pane: 'pane_Rayons_17',
+            onEachFeature: pop_Rayons_17,
+            style: style_Rayons_17_0,
+        });
+        bounds_group.addLayer(layer_Rayons_17);
+        map.addLayer(layer_Rayons_17);
+        function pop_Oblastsboundary_18(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['qc_id'] !== null ? Autolinker.link(String(feature.properties['qc_id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1_pcode'] !== null ? Autolinker.link(String(feature.properties['adm1_pcode'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1_ref'] !== null ? Autolinker.link(String(feature.properties['adm1_ref'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_en'] !== null ? Autolinker.link(String(feature.properties['adm0_en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1type'] !== null ? Autolinker.link(String(feature.properties['adm1type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1p2016'] !== null ? Autolinker.link(String(feature.properties['adm1p2016'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_le_1'] !== null ? Autolinker.link(String(feature.properties['shape_le_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_area'] !== null ? Autolinker.link(String(feature.properties['shape_area'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['# ahs'] !== null ? Autolinker.link(String(feature.properties['# ahs'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['trainingne'] !== null ? Autolinker.link(String(feature.properties['trainingne'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ratio ah/t'] !== null ? Autolinker.link(String(feature.properties['ratio ah/t'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Oblastsboundary_18_0() {
+            return {
+                pane: 'pane_Oblastsboundary_18',
+                opacity: 1,
+                color: 'rgba(80,80,80,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 6.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,113,141,0.0)',
+            }
+        }
+        map.createPane('pane_Oblastsboundary_18');
+        map.getPane('pane_Oblastsboundary_18').style.zIndex = 418;
+        map.getPane('pane_Oblastsboundary_18').style['mix-blend-mode'] = 'normal';
+        var layer_Oblastsboundary_18 = new L.geoJson(json_Oblastsboundary_18, {
+            attribution: '',
+            pane: 'pane_Oblastsboundary_18',
+            onEachFeature: pop_Oblastsboundary_18,
+            style: style_Oblastsboundary_18_0,
+        });
+        bounds_group.addLayer(layer_Oblastsboundary_18);
+        map.addLayer(layer_Oblastsboundary_18);
+        function pop_BoundaryofUkraine_19(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['qc_id'] !== null ? Autolinker.link(String(feature.properties['qc_id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_leng'] !== null ? Autolinker.link(String(feature.properties['shape_leng'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_en'] !== null ? Autolinker.link(String(feature.properties['adm0_en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_ua'] !== null ? Autolinker.link(String(feature.properties['adm0_ua'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_ru'] !== null ? Autolinker.link(String(feature.properties['adm0_ru'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_pcode'] !== null ? Autolinker.link(String(feature.properties['adm0_pcode'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0_ref'] !== null ? Autolinker.link(String(feature.properties['adm0_ref'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0alt1en'] !== null ? Autolinker.link(String(feature.properties['adm0alt1en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0alt2en'] !== null ? Autolinker.link(String(feature.properties['adm0alt2en'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0alt1ua'] !== null ? Autolinker.link(String(feature.properties['adm0alt1ua'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0alt2ua'] !== null ? Autolinker.link(String(feature.properties['adm0alt2ua'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0alt1ru'] !== null ? Autolinker.link(String(feature.properties['adm0alt1ru'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0alt2ru'] !== null ? Autolinker.link(String(feature.properties['adm0alt2ru'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date'] !== null ? Autolinker.link(String(feature.properties['date'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['validon'] !== null ? Autolinker.link(String(feature.properties['validon'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['validto'] !== null ? Autolinker.link(String(feature.properties['validto'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0clas'] !== null ? Autolinker.link(String(feature.properties['adm0clas'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_le_1'] !== null ? Autolinker.link(String(feature.properties['shape_le_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_area'] !== null ? Autolinker.link(String(feature.properties['shape_area'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BoundaryofUkraine_19_0() {
+            return {
+                pane: 'pane_BoundaryofUkraine_19',
+                opacity: 1,
+                color: 'rgba(75,75,75,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 15.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,166,178,0.0)',
+            }
+        }
+        map.createPane('pane_BoundaryofUkraine_19');
+        map.getPane('pane_BoundaryofUkraine_19').style.zIndex = 419;
+        map.getPane('pane_BoundaryofUkraine_19').style['mix-blend-mode'] = 'normal';
+        var layer_BoundaryofUkraine_19 = new L.geoJson(json_BoundaryofUkraine_19, {
+            attribution: '',
+            pane: 'pane_BoundaryofUkraine_19',
+            onEachFeature: pop_BoundaryofUkraine_19,
+            style: style_BoundaryofUkraine_19_0,
+        });
+        bounds_group.addLayer(layer_BoundaryofUkraine_19);
+        map.addLayer(layer_BoundaryofUkraine_19);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/BoundaryofUkraine_19.png" /> Boundary of Ukraine': layer_BoundaryofUkraine_19,'<img src="legend/Oblastsboundary_18.png" /> Oblast\'s boundary': layer_Oblastsboundary_18,'<img src="legend/Rayons_17.png" /> Rayons': layer_Rayons_17,'<img src="legend/Settlements_16.png" /> Settlements': layer_Settlements_16,'AHs by type<br /><table><tr><td style="text-align: center;"><img src="legend/AHsbytype_15_townAH0.png" /></td><td>town AH</td></tr><tr><td style="text-align: center;"><img src="legend/AHsbytype_15_settlementAH1.png" /></td><td>settlement AH</td></tr><tr><td style="text-align: center;"><img src="legend/AHsbytype_15_villageAH2.png" /></td><td>village AH</td></tr><tr><td style="text-align: center;"><img src="legend/AHsbytype_15_3.png" /></td><td></td></tr></table>': layer_AHsbytype_15,'<img src="legend/Amalgamatedhromadas_14.png" /> Amalgamated hromadas': layer_Amalgamatedhromadas_14,'Oblasts<br /><table><tr><td style="text-align: center;"><img src="legend/Oblasts_13_AvtonomnaRespublikaKrym0.png" /></td><td>Avtonomna Respublika Krym</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Cherkaska1.png" /></td><td>Cherkaska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Chernihivska2.png" /></td><td>Chernihivska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Chernivetska3.png" /></td><td>Chernivetska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Dnipropetrovska4.png" /></td><td>Dnipropetrovska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Donetska5.png" /></td><td>Donetska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_IvanoFrankivska6.png" /></td><td>Ivano-Frankivska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Kharkivska7.png" /></td><td>Kharkivska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Khersonska8.png" /></td><td>Khersonska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Khmelnytska9.png" /></td><td>Khmelnytska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Kirovohradska10.png" /></td><td>Kirovohradska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Kyivska11.png" /></td><td>Kyivska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Luhanska12.png" /></td><td>Luhanska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Lvivska13.png" /></td><td>Lvivska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Mykolaivska14.png" /></td><td>Mykolaivska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Odeska15.png" /></td><td>Odeska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Poltavska16.png" /></td><td>Poltavska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Rivnenska17.png" /></td><td>Rivnenska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Sevastopol18.png" /></td><td>Sevastopol</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Sumska19.png" /></td><td>Sumska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Ternopilska20.png" /></td><td>Ternopilska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Vinnytska21.png" /></td><td>Vinnytska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Volynska22.png" /></td><td>Volynska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Zakarpatska23.png" /></td><td>Zakarpatska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Zaporizka24.png" /></td><td>Zaporizka</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_Zhytomyrska25.png" /></td><td>Zhytomyrska</td></tr><tr><td style="text-align: center;"><img src="legend/Oblasts_13_26.png" /></td><td></td></tr></table>': layer_Oblasts_13,"Google Road": layer_GoogleRoad_12,'Coverage by initiatives overall<br /><table><tr><td style="text-align: center;"><img src="legend/Coveragebyinitiativesoverall_11_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Coveragebyinitiativesoverall_11_AHscoveredby1initiative1.png" /></td><td>AHs covered by 1 initiative</td></tr><tr><td style="text-align: center;"><img src="legend/Coveragebyinitiativesoverall_11_AHscoveredby2initiatives2.png" /></td><td>AHs covered by 2 initiatives</td></tr><tr><td style="text-align: center;"><img src="legend/Coveragebyinitiativesoverall_11_AHscoveredby3initiatives3.png" /></td><td>AHs covered by 3 initiatives</td></tr><tr><td style="text-align: center;"><img src="legend/Coveragebyinitiativesoverall_11_AHscoveredby4initiatives4.png" /></td><td>AHs covered by 4 initiatives</td></tr><tr><td style="text-align: center;"><img src="legend/Coveragebyinitiativesoverall_11_AHscoveredby6initiatives5.png" /></td><td>AHs covered by 6 initiatives</td></tr><tr><td style="text-align: center;"><img src="legend/Coveragebyinitiativesoverall_11_6.png" /></td><td></td></tr></table>': layer_Coveragebyinitiativesoverall_11,'Energy Efficiency<br /><table><tr><td style="text-align: center;"><img src="legend/EnergyEfficiency_10_EE0.png" /></td><td>EE</td></tr><tr><td style="text-align: center;"><img src="legend/EnergyEfficiency_10_1.png" /></td><td></td></tr></table>': layer_EnergyEfficiency_10,'Integrated Spatial Planning<br /><table><tr><td style="text-align: center;"><img src="legend/IntegratedSpatialPlanning_9_ISP0.png" /></td><td>ISP</td></tr><tr><td style="text-align: center;"><img src="legend/IntegratedSpatialPlanning_9_1.png" /></td><td></td></tr></table>': layer_IntegratedSpatialPlanning_9,'Development of Local Strategies<br /><table><tr><td style="text-align: center;"><img src="legend/DevelopmentofLocalStrategies_8_DevelopmentofLocalStrategies0.png" /></td><td>Development of Local Strategies</td></tr><tr><td style="text-align: center;"><img src="legend/DevelopmentofLocalStrategies_8_1.png" /></td><td></td></tr></table>': layer_DevelopmentofLocalStrategies_8,'Waste Management<br /><table><tr><td style="text-align: center;"><img src="legend/WasteManagement_7_WasteManagement0.png" /></td><td>Waste Management</td></tr><tr><td style="text-align: center;"><img src="legend/WasteManagement_7_1.png" /></td><td></td></tr></table>': layer_WasteManagement_7,'Social Services<br /><table><tr><td style="text-align: center;"><img src="legend/SocialServices_6_SocialServices0.png" /></td><td>Social Services</td></tr><tr><td style="text-align: center;"><img src="legend/SocialServices_6_1.png" /></td><td></td></tr></table>': layer_SocialServices_6,'Sustainable Mobility<br /><table><tr><td style="text-align: center;"><img src="legend/SustainableMobility_5_SustainableMobility0.png" /></td><td>Sustainable Mobility</td></tr><tr><td style="text-align: center;"><img src="legend/SustainableMobility_5_1.png" /></td><td></td></tr></table>': layer_SustainableMobility_5,'E-Solutions for AHs<br /><table><tr><td style="text-align: center;"><img src="legend/ESolutionsforAHs_4_ESolutionsforAHs0.png" /></td><td>E-Solutions for AHs</td></tr><tr><td style="text-align: center;"><img src="legend/ESolutionsforAHs_4_1.png" /></td><td></td></tr></table>': layer_ESolutionsforAHs_4,'Public Safety <br /><table><tr><td style="text-align: center;"><img src="legend/PublicSafety_3_PublicSafety0.png" /></td><td>Public Safety</td></tr><tr><td style="text-align: center;"><img src="legend/PublicSafety_3_1.png" /></td><td></td></tr></table>': layer_PublicSafety_3,'Peer to Peer<br /><table><tr><td style="text-align: center;"><img src="legend/PeertoPeer_2_PeertoPeer0.png" /></td><td>Peer to Peer</td></tr><tr><td style="text-align: center;"><img src="legend/PeertoPeer_2_1.png" /></td><td></td></tr></table>': layer_PeertoPeer_2,'International Study VIsits<br /><table><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_CrossbordercooperationCBC0.png" /></td><td>Cross-border cooperation (CBC)</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_LocaleconomicdevelopmentLED1.png" /></td><td>Local economic development (LED)</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_PublicservicesandinfrastructuredevelopmentINF2.png" /></td><td>Public services and infrastructure development (INF) </td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_LocalselfgovernmentLSG3.png" /></td><td>Local self-government (LSG)</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_SocialServicesSOC4.png" /></td><td>Social Services (SOC)</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_SOCandLED5.png" /></td><td>SOC and LED</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_SOCandLSG6.png" /></td><td>SOC and LSG </td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_LEDandLSG7.png" /></td><td>LED and LSG</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_INFandCBC8.png" /></td><td>INF and CBC</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_INFandLED9.png" /></td><td>INF and LED</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_INFandLSG10.png" /></td><td>INF and LSG</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_infLSG11.png" /></td><td>infLSG</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_INFandSOC12.png" /></td><td>INF and SOC</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_INFCBCandSOC13.png" /></td><td>INF, CBC and SOC</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_INFSOCandLED14.png" /></td><td>INF, SOC and LED</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_INFSOCandLSG15.png" /></td><td>INF, SOC and LSG</td></tr><tr><td style="text-align: center;"><img src="legend/InternationalStudyVIsits_1_16.png" /></td><td></td></tr></table>': layer_InternationalStudyVIsits_1,'Other donors initiatives<br /><table><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_DOBRE0.png" /></td><td>DOBRE</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_DESPROStrategicdevelopment1.png" /></td><td>DESPRO (Strategic development)</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_DESPROandDOBRE2.png" /></td><td>DESPRO and DOBRE</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_USAIDandDOBRE3.png" /></td><td>USAID and DOBRE</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_4.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_USAIDAgriculturaldevelopment5.png" /></td><td>USAID Agricultural development</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_USAIDandDOBRE6.png" /></td><td>USAID and DOBRE</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_DESPROWaste7.png" /></td><td>DESPRO (Waste)</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_DESPROwater8.png" /></td><td>DESPRO (water)</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_DESPROwaterandDOBRE9.png" /></td><td>DESPRO (water) and DOBRE</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_DESPROwaterandUSAID10.png" /></td><td>DESPRO (water) and USAID</td></tr><tr><td style="text-align: center;"><img src="legend/Otherdonorsinitiatives_0_11.png" /></td><td></td></tr></table>': layer_Otherdonorsinitiatives_0,}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
